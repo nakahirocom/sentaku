@@ -20,6 +20,7 @@
 
  <script type="text/javascript">
 
+
  //問題と解答
  qa = new Array();
  qa[0] = ["Linuxの特徴で間違っているのは？","無料で多くの関連ソフトウェアが利用可能","WindowsやmacOSと異なり、マウスは使えずコマンドでしか操作できない","仮想化ソフトウェア上で無料で動かすことができる",2];
@@ -52,7 +53,8 @@
  qa[27] = ["仮想マシンを立ち上げるVagrantのコマンドはなんでしょう？","rlogin","vagrant halt","Vagrant up",3];
  qa[28] = ["仮想マシンを閉じるVagrantのコマンドはなんでしょう？","rlogin","vagrant halt","Vagrant up",2];
  qa[29] = ["Linux を操作する通信プロトコルを何という？","GUI＝Graphical User Interface（グラフィカル・ユーザ・インターフェース）","Linuxディストリビューション","SSH＝Secure Shell（セキュアシェル）",3];
- 
+ qa[30] = ["jsのfor文でエラーのないコードはどれでしょう","for(var i=0, i <= 10, i++){}","for(var i=0: i <= 10: i++){}","for(var i=0; i <= 10; i++){}",3];
+ qa[31] = ["jsのfor文でエラーのないコードはどれでしょう","for(var i=0; i <= 10; i++){aleat(i);}","for(var i=0: i <= 10; i++){aleat(i)}","for(var i=0; i <= 10; i++){aleat i;}",1];
 
 
  function run(){ //randomの生成
@@ -83,10 +85,10 @@ function quiz() { //問題表示
   //選択肢
  s = "";
    for (n=1;n<=q_sel;n++) {
-    s += "【<a href='javascript:anser(" + n + ")'>" + n + "：" + qa[count][n] + "</a>】";
+    s += "【<a href='javascript:anser(" + n + ")'>" + n + "：" + qa[count][n] + "</a>】<br>";
    }
  document.getElementById("text_s").innerHTML = s;
- }
+}
 function anser(num) { //解答表示
   var s;
   s = (count + 1) + "問目：";
