@@ -56,7 +56,6 @@
  qa[30] = ["jsのfor文でエラーのないコードはどれでしょう","for(var i=0, i <= 10, i++){}","for(var i=0: i <= 10: i++){}","for(var i=0; i <= 10; i++){}",3];
  qa[31] = ["jsのfor文でエラーのないコードはどれでしょう","for(var i=0; i <= 10; i++){aleat(i);}","for(var i=0: i <= 10; i++){aleat(i)}","for(var i=0; i <= 10; i++){aleat i;}",1];
 
-
  function run(){ //randomの生成
  for (var i = qa.length-1; i>=0; i--){
   var rand = Math.floor(Math.random() * (i+1));
@@ -69,6 +68,8 @@
 
 
  //初期設定
+ //q_sel = 3; //選択肢の数
+ 
  q_sel = 3; //選択肢の数
  setReady(qa);
 
@@ -80,21 +81,37 @@ function setReady() {//初期設定
  }
 function quiz() { //問題表示
   var s, n;
+ 
+ 
   //問題
  document.getElementById("text_q").innerHTML = (count + 1) + "問目：" + qa[count][0];
   //選択肢
  s = "";
-   for (n=1;n<=q_sel;n++) {
-    s += "【<a href='javascript:anser(" + n + ")'>" + n + "：" + qa[count][n] + "</a>】<br>";
+
+ //中村追加ランダム。有名なアルゴリズムシャッフルコード「Fisher–Yates shuffle」
+ var sentakusi_rand = [1,2,3];
+  for (var m = q_sel-1; m>=1; m--){
+    var rand = Math.floor(Math.random() * (q_sel-1));
+    var temp = sentakusi_rand[m];
+        sentakusi_rand[m] = sentakusi_rand[rand]
+        sentakusi_rand[rand] = temp;
+}
+
+  for (n=1;n<=q_sel;n++) {
+      s += "【<a href='javascript:anser(" + n + ")'>" + n + "：" + qa[count][sentakusi_rand[n-1]] + "</a>】<br>";
    }
  document.getElementById("text_s").innerHTML = s;
 }
+
+
 function anser(num) { //解答表示
   var s;
   s = (count + 1) + "問目：";
   //答え合わせ
- if (num == qa[count][q_sel + 1]) {
-   //正解
+
+   if (num == qa[count][q_sel + 1]) {
+  
+    //正解
   ansers[count] = "○";
   } else {
    ansers[count] = "×";
