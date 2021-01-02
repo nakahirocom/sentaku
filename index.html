@@ -100,11 +100,10 @@
       }
 
       for (n = 1; n <= q_sel; n++) {
-        s += "【<a href='javascript:anser(" + n + ")'>" + n + "：" + qa[count][sentakusi_rand[n - 1]] + "</a>】<br>";
+        s += "【<a href='javascript:anser(" + [sentakusi_rand[n - 1]] + ")'>" + n + "：" + qa[count][sentakusi_rand[n - 1]] + "</a>】<br>";
       }
       document.getElementById("text_s").innerHTML = s;
     }
-
 
     function anser(num) { //解答表示
       var s;
