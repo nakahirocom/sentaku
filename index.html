@@ -14,12 +14,12 @@
         <h2>問題</h2>
         <div id="text_q"></div>
 
-        <h2>ランダム選択</h2>
+        <h2>ランダム出題</h2>
         <button style="display:block" type="submit" id="text_r1"></button>
         <button style="display:block" type="submit" id="text_r2"></button>
         <button style="display:block" type="submit" id="text_r3"></button>
 
-        <h2>振返り</h2>
+        <h2>答え合わせ</h2>
         <div id="text_q1"></div>
         <div id="text_a1"></div>
         <div id="text_q2"></div>
@@ -27,7 +27,7 @@
         <div id="text_q3"></div>
         <div id="text_a3"></div>
 
-        <h2>答え合わせ</h2>
+        <h2>解説</h2>
         <div id="text_k"></div>
         <div id="text_ans"></div>
 
@@ -250,19 +250,22 @@ for (let qall = 0; qall < qa.length; qall++) {
 //    document.write("●" + qa[qall][0]);
 }
 
+//document.getElementById("text_k").innerHTML = "選択"+(kai+1)+" : "+anser;
+//document.getElementById("text_ans").innerHTML = qa[0][1];
 
-if(qa[0][0]==sentaku[0][0]){
- var anser= "maru";
-}else{
-  anser= "batu";
-}
-document.getElementById("text_k").innerHTML = anser;
-document.getElementById("text_ans").innerHTML = qa[0][1];
+
+
 
 
 for (let sen = 0; sen < sentaku.length; sen++) {
+    if(qa[0]==sentaku[sen]){
+ var anser= "〇";
+}else{
+  anser= "✕";
+}
+
     document.getElementById("text_q"+(sen+1)).innerHTML = "選択"+(sen+1)+" : "+sentaku[sen][0];
-    document.getElementById("text_a"+(sen+1)).innerHTML = "解答　: "+sentaku[sen][1];
+    document.getElementById("text_a"+(sen+1)).innerHTML = "解答"+anser+" : "+sentaku[sen][1];
 }
 
 
