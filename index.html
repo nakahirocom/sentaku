@@ -1,512 +1,272 @@
-<!DOCTYPE HTML>
-<html>
-
+<!DOCTYPE html>
+<html lang="ja">
 <head>
-  <meta charset="utf-8">
-  <title>三択クイズ</title>
+  <meta charset="UTF-8">
+  <title>三択問題研究中</title>
 </head>
-
 <body>
-  <h1>クイズひな形</h1>
-  <hr>
+    <body>
+        <h1>クイズひな形</h1>
+        <hr>
+      
+        <span id="001"></span>
+      
+        <h2>問題</h2>
+        <div id="text_q"></div>
 
-  <span id="001"></span>
+        <h2>ランダム選択</h2>
+        <button style="display:block" type="submit" id="text_r1"></button>
+        <button style="display:block" type="submit" id="text_r2"></button>
+        <button style="display:block" type="submit" id="text_r3"></button>
 
-  <h2>問題</h2>
-  <div id="text_q"></div>
-  <h2>選択</h2>
-  <div id="text_s"></div>
-  <h2>解答</h2>
-  <div id="text_a"></div>
-
-  <div id="text_q1"></div>
-  <div id="text_b"></div>
-
-  <div id="text_q2"></div>
-  <div id="text_c"></div>
-
-  <div id="text_q3"></div>
-  <div id="text_d"></div>
+        <h2>答え合わせ</h2>
+        <div id="text_k"></div>
+        <div id="text_ans"></div>
 
 
-  <script type="text/javascript">
+        <h2>振返り</h2>
+        <div id="text_q1"></div>
+        <div id="text_a1"></div>
+        <div id="text_q2"></div>
+        <div id="text_a2"></div>
+        <div id="text_q3"></div>
+        <div id="text_a3"></div>
 
+<script>
 
-    //問題と解答
-    qa = new Array();
+qa = new Array();
     qa[0] = ["Linuxの特徴で間違っているのは？",
-                "WindowsやmacOSと異なり、マウスは使えずコマンドでしか操作できない",
-                "無料で多くの関連ソフトウェアが利用可能",
-                "仮想化ソフトウェア上で無料で動かすことができる", 
-                1];
+             "WindowsやmacOSと異なり、マウスは使えずコマンドでしか操作できない",];
 
     qa[1] = ["コンソールなどの文字だけによるインタフェースを何という？",
-                "CLI＝Command Line Interface（コマンドラインインターフェース）",
-                "SSH＝Secure Shell（セキュアシェル）",
-                "GUI＝Graphical User Interface（グラフィカル・ユーザ・インターフェース）",
-                1];
+             "CLI＝Command Line Interface（コマンドラインインターフェース）",];
 
     qa[2] = ["コンピュータにおける作業台にたとえられるものは？",
-                "メモリ",
-                "ＣＰＵ",
-                "ストレージ", 
-                1];
+             "メモリ",];
 
     qa[3] = ["Linuxにおいてファイルやディレクトリの削除するコマンドは？",
-                "rm",
-                "cd",
-                "mv",
-                1];
+             "rm",];
 
     qa[4] = ["コマンドプロセスの入出力について正しいものを選択して下さい",
-                "標準入力を受け取り、標準出力と標準エラー出力を出す",
-                "標準入力を受け取り、標準出力を出す",
-                "標準出力を受け取り、標準出力と標準エラー出力を出す",
-                1];
+             "標準入力を受け取り、標準出力と標準エラー出力を出す",];
 
     qa[5] = ["標準入力の中に指定した単語が含まれるかを判定して出力するコマンドは？",
-                "grep",
-                "cat",
-                "less",
-                1];
+             "grep",];
     
     qa[6] = ["Vimで文字をファイルに入力するためのインサートモードに入るための入力文字は？",
-                "i",
-                "k",
-                "l",
-                1];
+             "i",];
     
     qa[7] = ["Vimでファイルに保存するための入力文字は？",
-                ":w",
-                ";q!",
-                ":q",
-                1];
+             ":w",];
     
     qa[8] = ["シェルの説明で間違っているものは？",
-                "VScodeはシェルの１つ",
-                "bashはシェルの１つ",
-                "OSのカーネルを包み込み対話をする機能を持つ",
-                1];
+             "VScodeはシェルの１つ",];
     
     qa[9] = ["指定された文字列を標準出力に表示するコマンドは？",
-                "echo",
-                "cat",
-                "chmod",
-                1];
+             "echo",];
     
     qa[10] = ["パケットを発行しネットワーク疎通を確認したいホストに対し調査できるコマンドは？",
-                "ping",
-                "netstat",
-                "traceroute",
-                1];
+              "ping",];
     
     qa[11] = ["http通信で誤った説明は？",
-                "httpはデフォルトで8000番ポートを利用する",
-                "http通信には応答を求めるリクエストと応答であるレスポンスがある",
-                "http通信のレスポンスにはヘッダ情報と本体部分を表すcontentがある",
-                1];
+              "httpはデフォルトで8000番ポートを利用する",];
     
     qa[12] = ["システム全体を管理するソフトウェアのことを何という",
-                "OS 、Operating System （オペレーティング・システム）",
-                "ブラウザ",
-                "コンソール",
-                1];
+              "OS 、Operating System （オペレーティング・システム）",];
     
     qa[13] = ["OSの中核部分のことを指す言葉を何という",
-                "Linux カーネル",
-                "シェル",
-                "Windows",
-                1];
+              "Linux カーネル",];
 
      qa[14] = ["Linuxカーネルを車の部品に例えるとどれでしょう",
-                "エンジン",
-                "ハンドル",
-                "ブレーキ",
-                1];
+                "エンジン",];
     
     qa[15] = ["Linuxカーネルと各種ソフトウェアを「おすすめセット」のような形式で配布されているもの",
-                "Linux ディストリビューション",
-                "VScode",
-                "Windows",
-                1];
+                "Linux ディストリビューション",];
     
     qa[16] = ["サーバー向けディストリビューションの１つは次のうちどれでしょう。",
-                "Ubuntu（ウブントゥ）",
-                "Vagrant（ベイグラント）",
-                "VirtualBox（バーチャルボックス）",
-                 1];
+                "Ubuntu（ウブントゥ）",];
                 
     qa[17] = ["英語で管理者は次のうちどれでしょう",
-                "Administrator",
-                "Master",
-                "Leader",
-                1];
+                "Administrator",];
     
     qa[18] = ["コマンドや他のアプリケーションを呼び出すことができる特別な環境は次のうちどれでしょう",
-                "コンソール",
-                "シェル",
-                "Linux カーネル",
-                1];
+                "コンソール",];
     
     qa[19] = ["ユーザのホームディレクトリを示すチルダとはどれでしょう",
-                "~",
-                "/",
-                "|",
-                1];
+                "~",];
     
     qa[20] = ["現在開いているディレクトリはどれでしょう",
-                "カレントディレクトリ",
-                "ホームディレクトリ",
-                "コンソール",
-                1];
+                "カレントディレクトリ",];
     
     qa[21] = ["仮想環境（仮想マシン）を英語でいうとどれでしょう",
-                "VM＝Virtual Machine",
-                "GUI＝Graphical User Interface（グラフィカル・ユーザ・インターフェース）",
-                "CLI＝Command Line Interface（コマンドラインインターフェース）",
-                1];
+                "VM＝Virtual Machine",];
     
     qa[22] = ["最新版ではなく特定のバージョンを指定してインストールしたり、複数のバージョンを同時に使い分けたりする面倒なことを簡単に実行してくれるツールを何という？",
-                "パッケージマネージャ",
-                "シェル",
-                "ストレージ",
-                1];
+                "パッケージマネージャ",];
     
     qa[23] = ["パッケージマネージャでないものはどれでしょう",
-                "VScode（ブイエスコード）",
-                "WindowsのChocolatey（チョコラティー）",
-                "macOSのHomebrew（ホームブリュー）",
-                1];
+                "VScode（ブイエスコード）",];
     
     qa[24] = ["コマンド入力ソフトでないものはどれでしょう",
-                "Linuxカーネル",
-                " MacOSのiTerm2 ",
-                "WindowsのPowerShell（パワーシェル）",
-                1];
+                "Linuxカーネル",];
         
     qa[25] = ["仮想環境を構築するためのソフトはどれでしょう？",
-                "VirtualBox（バーチャルボックス）",
-                "WindowsのChocolatey（チョコラティー）",
-                "Linuxディストリビューション",
-                1];
+                "VirtualBox（バーチャルボックス）",];
     
     qa[26] = ["VirtualBox の操作を簡単にしてくれるツールを何というでしょう",
-                "Vagrant （ベイグラント）",
-                "Linuxカーネル",
-                "VM＝Virtual Machine",
-                1];
+                "Vagrant （ベイグラント）",];
     
     qa[27] = ["仮想マシンを立ち上げるVagrantのコマンドはなんでしょう？",
-                "Vagrant up",
-                "rlogin",
-                "vagrant halt",
-                1];
+                "Vagrant up",];
         
     qa[28] = ["仮想マシンを閉じるVagrantのコマンドはなんでしょう？",
-                "vagrant halt",
-                "rlogin",
-                "Vagrant up",
-                1];
+                "vagrant halt",];
     
     qa[29] = ["Linux を操作する通信プロトコルを何という？",
-                "SSH＝Secure Shell（セキュアシェル）",
-                "GUI＝Graphical User Interface（グラフィカル・ユーザ・インターフェース）",
-                "Linuxディストリビューション",
-                1];
+                "SSH＝Secure Shell（セキュアシェル）",];
     
     qa[30] = ["jsのfor文でエラーのないコードはどれでしょう",
-                "for(var i=0; i <= 10; i++){}",
-                "for(var i=0, i <= 10, i++){}",
-                "for(var i=0: i <= 10: i++){}",
-                1];
+                "for(var i=0; i <= 10; i++){}",];
 
     qa[31] = ["Linuxのコマンドで現在のディレクトリを表示するものは",
-                "pwd=Print Working Directory",
-                "ls=LiStの略",
-                "mkdir",
-                1];
+                "pwd=Print Working Directory",];
 
     qa[32] = ["Linuxのコマンドでファイルディレクトリを検索するものは",
-                "find",
-                "ls=LiStの略",
-                "pwd=Print Working Directoryの略",
-                1];
+                "find",];
 
     qa[33] = ["jsのfor文でエラーのないコードはどれでしょう",
-                "for(var i=0; i <= 10; i++){aleat(i);}",
-                "for(var i=0: i <= 10; i++){aleat(i)}",
-                "for(var i=0; i <= 10; i++){aleat i;}",
-                1];
+                "for(var i=0; i <= 10; i++){aleat(i);}",];
 
     qa[34] = ["ルートディレクトリからのパスを何という",
-                "絶対パス /home/vagrant",
-                "相対パス ./vagrant (又は ./を省略可能)",
-                "カレントパス ~/",
-                1];
+                "絶対パス /home/vagrant",];
 
     qa[35] = ["現在のディレクトリ（カレントディレクトリ）からのパスを何という",
-                "相対パス ./vagrant(又は ./を省略可能)",
-                "絶対パス /home/vagrant",
-                "カレントパス ~/",
-                1];
+                "相対パス ./vagrant(又は ./を省略可能)",];
 
     qa[36] = ["Linuxのコマンドで現在のディレクトリのファイルとディレクトリを表示するものは",
-                "ls=LiStの略",
-                "find",
-                "pwd=Print Working Directoryの略",
-                1];
+                "ls=LiStの略",];
 
     qa[37] = ["Linuxのコマンドで現在のディレクトリから別のディレクトリに移動するものは",
-                "cd=Change Directoryの略",
-                "find",
-                "pwd=Print Working Directoryの略",
-                1];
+                "cd=Change Directoryの略",];
 
     qa[38] = ["Linuxのコマンドで１つ上のディレクトリに移動するものは",
-                "cd ..",
-                "cd ~",
-                "cd /",
-                1];
+                "cd ..",];
 
     qa[39] = ["Linuxのコマンドでルートディレクトリに移動するものは",
-                "cd /",
-                "cd ..",
-                "cd ~",
-                1];
+                "cd /",];
 
     qa[40] = ["Linuxのコマンドでホームディレクトリに移動するものは",
-                "cd ~",
-                "cd /",
-                "cd ..",
-                1];
+                "cd ~",];
 
     qa[41] = ["Linuxのコマンドで入力を助けてくれる機能は",
-                "Tab補完",
-                "検索",
-                "Linux",
-                1];
+                "Tab補完",];
 
     qa[42] = ["Linuxのコマンドでディレクトリやファイルを作成するものは",
-                "mkdir=MaKe DIRectory",
-                "cd=Change Directory",
-                "find",
-                1];
+                "mkdir=MaKe DIRectory",];
 
     qa[43] = ["プログラミングで一時的にディレクトリやファイルを使用するためによく使われるものは",
-                "tmp=temporary",
-                "mkdir=MaKe DIRectory",
-                "pwd=Print Working Directory",
-                1];
+                "tmp=temporary",];
 
     qa[44] = ["Linuxのコマンドでディレクトリやファイルを削除するものは",
-                "rm=ReMove",
-                "cd=Change Directory",
-                "find",
-                1];
+                "rm=ReMove",];
 
     qa[45] = ["Linuxのコマンドで〇〇ディレクトリを削除できないものは",
-                "rm 〇〇",
-                "rm -a 〇〇",
-                "rmdir 〇〇",
-                1];
+                "rm 〇〇",];
 
     qa[46] = ["Linuxのコマンドでファイルやディレクトリをコピーするものは",
-                "cp=CoPy",
-                "mkdir=MaKe DIRectory",
-                "rm=ReMove",
-                1];
+                "cp=CoPy",];
 
     qa[47] = ["Linuxのコマンドで中身を含めてディレクトリをコピーするものは",
-                "cp -r ",
-                "cp",
-                "cp -a",
-                1];
+                "cp -r ",];
 
     qa[48] = ["Linuxのコマンドでファイルやディレクトリを移動するものは",
-                "rm=ReMove",
-                "cp=CoPy",
-                "mkdir=MaKe DIRectory",
-                1];
+                "mv=Move",];
 
     qa[49] = ["Linuxのコマンドで[mv b c]で移動先にディレクトリがない場合の処理はどれ",
-                "ディレクトリbが移動し、ディレクトリcに名前が変わる",
-                "ディレクトリbが移動し、ディレクトリbが作成される",
-                "ディレクトリbと並列にディレクトリcが作成される",
-                1];
+                "ディレクトリbが移動し、ディレクトリcに名前が変わる",];
 
     qa[50] = ["Linuxのコマンドで[mv b c]で移動先にディレクトリcがある場合の処理はどれ",
-                "ディレクトリcの中に、ディレクトリbが移動する",
-                "ディレクトリbが移動し、ディレクトリcに名前が変わる",
-                "ディレクトリbと並列にディレクトリcが作成される",
-                1];
+                "ディレクトリcの中に、ディレクトリbが移動する",];
 
     qa[51] = ["Linuxのコマンド[mv b c]で移動先ディレクトリがc/bである場合の処理はどれ",
-                "ディレクトリcが重複するためエラー表示がでる",
-                "ディレクトリbが移動し、ディレクトリcに名前が変わる",
-                "ディレクトリbと並列にディレクトリcが作成される",
-                1];
-
+                "ディレクトリcが重複するためエラー表示がでる",];
 
     qa[52] = ["Linuxのコマンド[mv tmp/c workspace/tmp]でディレクトリがworkspace/tmpまでの場合の処理はどれ",
-                "ディレクトリworkspace/tmpの中に、ディレクトリcが移動される",
-                "ディレクトリworkspace/tmpの中に、ディレクトリtmp/cが移動される",
-                "tmpが重複するためエラー表示がでる",
-                1];
+                "ディレクトリworkspace/tmpの中に、ディレクトリcが移動される",];
 
     qa[53] = ["Linuxのコマンドでファイルやディレクトリを探すものは",
-                "find",
-                "mkdir=MaKe DIRectory",
-                "rm=ReMove",
-                1];
+                "find",];
 
     qa[54] = ["Linuxのコマンドで引数について合っているものはどれでしょう",
-                "コマンドにもオプションにも引数はある",
-                "コマンドにのみ引数がある",
-                "オプションにのみ引数がある",
-                1];
+                "コマンドにもオプションにも引数はある",];
 
     qa[55] = ["Vagrantfileの説明をしているものはどれでしょう",
-                "Vagrantのコンフィグファイル(設定ファイル)",
-                "コマンドや他のアプリケーションを呼び出すことができる特別な環境",
-                "VirtualBox の操作を簡単にしてくれるツール",
-                1];
+                "Vagrantのコンフィグファイル(設定ファイル)",];
 
     qa[56] = ["Linuxのコマンドでリダイレクト(標準出力をファイルに書き出す)の処理はどれでしょう",
-                "ls > tmp/ls-output.txt",
-                "ls = tmp/ls-output.txt",
-                "ls < tmp/ls-output.txt",
-                1];
+                "ls > tmp/ls-output.txt",];
 
     qa[57] = ["Linuxのコマンドでリダイレクト(標準出力をファイルに追記して書き出す)のコードはどれでしょう",
-                "ls >> tmp/ls-output.txt",
-                "ls => tmp/ls-output.txt",
-                "ls << tmp/ls-output.txt",
-                1];
+                "ls >> tmp/ls-output.txt",];
 
     qa[58] = ["Linuxのコマンドでリダイレクト(標準エラー出力をファイルに書き出す)のコードはどれでしょう",
-                "ls 2> tmp/ls-output.txt",
-                "ls >2 tmp/ls-output.txt",
-                "ls <2 tmp/ls-output.txt",
-                1];
+                "ls 2> tmp/ls-output.txt",];
 
     qa[59] = ["Linuxのコマンドでリダイレクト(標準出力と標準エラー出力をファイルに書き出す)のコードはどれでしょう",
-                "ls 2>&1 tmp/ls-output.txt",
-                "ls >2&1 tmp/ls-output.txt",
-                "ls <2&1 tmp/ls-output.txt",
-                1];
+                "ls 2>&1 tmp/ls-output.txt",];
 
 
+function qashaf(qa){
 
-    function run() { //randomの生成
-      for (var i = qa.length - 1; i >= 0; i--) {
-        var rand = Math.floor(Math.random() * (i + 1));
-        var temp = qa[i];
-        qa[i] = qa[rand]
+      for (var m = qa.length-1; m >= 0; m--) {
+        var rand = Math.floor(Math.random() * (qa.length - 1));
+        var temp = qa[m];
+        qa[m] = qa[rand]
         qa[rand] = temp;
-        quiz(qa);
       }
-    }
+}
+qashaf(qa);
+
+var sentaku = qa.slice(0,3);
+
+document.getElementById("text_q").innerHTML = "   "+qa[0][0];
+  
 
 
-    //初期設定
-    //q_sel = 3; //選択肢の数
+function sentakuShaf(sentaku){
+for (var m = sentaku.length-1; m >= 0; m--) {
+  var rand = Math.floor(Math.random() * (sentaku.length - 1));
+  var temp = sentaku[m];
+  sentaku[m] = sentaku[rand]
+  sentaku[rand] = temp;
+}
+}
+sentakuShaf(sentaku);
 
-    q_sel = 3; //選択肢の数
-    setReady(qa);
+for (let sen = 0; sen < sentaku.length; sen++) {
+    document.getElementById("text_r"+(sen+1)).innerHTML = "選択"+(sen+1)+" : "+sentaku[sen][1];
+}
 
-    function setReady() {//初期設定
-      count = 0; //問題番号
-      ansers = new Array(); //解答記録
-      run(); //再テストの場合のランダムの生成
-      quiz(); //最初の問題
-    }
-    function quiz() { //問題表示
-      var s, n;
+for (let qall = 0; qall < qa.length; qall++) {
+//    document.write("●" + qa[qall][0]);
+}
 
 
-      //問題
-      document.getElementById("text_q").innerHTML = (count + 1) + "問目：" + qa[count][0];
-      //選択肢
-      s = "";
+if(qa[0][0]==sentaku[0][0]){
+ var anser= "maru";
+}else{
+  anser= "batu";
+}
+document.getElementById("text_k").innerHTML = anser;
+document.getElementById("text_ans").innerHTML = qa[0][1];
 
-      //中村追加ランダム。有名なアルゴリズムシャッフルコード「Fisher–Yates shuffle」
-      var sentakusi_rand = [1, 2, 3];
-      for (var m = q_sel - 1; m >= 1; m--) {
-        var rand = Math.floor(Math.random() * (q_sel - 1));
-        var temp = sentakusi_rand[m];
-        sentakusi_rand[m] = sentakusi_rand[rand]
-        sentakusi_rand[rand] = temp;
-      }
 
-      for (n = 1; n <= q_sel; n++) {
-        s += "【<a href='javascript:anser(" + [sentakusi_rand[n - 1]] + ")'>" + n + "：" + qa[count][sentakusi_rand[n - 1]] + "</a>】<br>";
-      }
-      document.getElementById("text_s").innerHTML = s;
-    }
+for (let sen = 0; sen < sentaku.length; sen++) {
+    document.getElementById("text_q"+(sen+1)).innerHTML = "選択"+(sen+1)+" : "+sentaku[sen][0];
+    document.getElementById("text_a"+(sen+1)).innerHTML = "解答　: "+sentaku[sen][1];
+}
 
-    function anser(num) { //解答表示
-      var s;
-      s = (count + 1) + "問目：";
-      //答え合わせ
 
-      if (num == qa[count][q_sel + 1]) {
-
-        //正解
-        ansers[count] = "○";
-      } else {
-        ansers[count] = "×";
-      }
-      s += ansers[count] + qa[count][num];
-      
-//      document.getElementById("text_a").innerHTML = s;
-      document.getElementById("text_a").innerHTML = s;
-      
-      //答え合わせ欄中村追加
-      document.getElementById("text_q1").innerHTML =  (count + 1) + "問目：" + qa[count][0];
-      s1 = (count + 1) + "問目：";
-      s1 += "〇: " + qa[count][1];
-      document.getElementById("text_b").innerHTML = s1;
-      
-      document.getElementById("text_q2").innerHTML =  (count + 1) + "問目：" + qa[count][0];
-      s2 = (count + 1) + "問目：";
-      s2 += "✕: " + qa[count][2];
-      document.getElementById("text_c").innerHTML = s2;
-
-      document.getElementById("text_q3").innerHTML =  (count + 1) + "問目：" + qa[count][0];
-      s3 = (count + 1) + "問目：";
-      s3 += "✕: " + qa[count][3];
-      document.getElementById("text_d").innerHTML = s3;
-      
-      
-      //次の問題を表示
-      count++;
-      if (count < qa.length) {
-        quiz();
-      } else {
-        //終了
-        s = "<table border='2'><caption>成績発表</caption>";
-        //1行目
-        s += "<tr><th>問題</th>";
-        for (n = 0; n < qa.length; n++) {
-          s += "<th>" + (n + 1) + "</th>";
-        }
-        s += "</tr>";
-        //2行目
-        s += "<tr><th>成績</th>";
-        for (n = 0; n < qa.length; n++) {
-          s += "<td>" + ansers[n] + "</td>";
-        }
-        s += "</tr>";
-        s += "</table>";
-        document.getElementById("text_q").innerHTML = s;
-        //次の選択肢
-        s = "【<a href='javascript:history.back()'>前のページに戻る</a>】";
-        s += "【<a href='javascript:setReady()'>同じ問題を最初から</a>】";
-        s += "【<a href=''>次の問題に進む</a>】";
-        document.getElementById("text_s").innerHTML = s;
-      }
-    }
-  </script>
+</script>  
 </body>
-
 </html>
