@@ -22,11 +22,19 @@
         <h2>答え合わせ</h2>
         <div id="text_q1"></div>
         <div id="text_a1"></div>
+        <div id="text_k1"></div>
+      
+      
         <div id="text_q2"></div>
         <div id="text_a2"></div>
+        <div id="text_k2"></div>
+      
+      
         <div id="text_q3"></div>
         <div id="text_a3"></div>
+        <div id="text_k3"></div>
 
+      
         <h2>解説</h2>
         <div id="text_k"></div>
         <div id="text_ans"></div>
@@ -80,6 +88,7 @@ for (let sen = 0; sen < sentaku.length; sen++) {
 
     document.getElementById("text_q"+(sen+1)).innerHTML = "選択"+(sen+1)+" : "+sentaku[sen][0];
     document.getElementById("text_a"+(sen+1)).innerHTML = "解答"+anser+" : "+sentaku[sen][1];
+    document.getElementById("text_k"+(sen+1)).innerHTML = "解答"+anser+" : "+sentaku[sen][2];
 }
 
 
