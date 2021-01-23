@@ -23,11 +23,11 @@
         this.others = others;
         this.choises = others.concat(answer)
       }
-      random = function() {
+      random = () => {
         let array = this.choises;
         for(let i = (array.length - 1); 0 < i; i--) {
           const r = Math.floor(Math.random() * (i + 1));
-          let tmp = array[i];
+          const tmp = array[i];
           array[i] = array[r];
           array[r] = tmp;
         }
@@ -73,9 +73,6 @@
           array[r] = tmp;
         }
         this.random = array;
-      }
-      getRandom = function() {
-        return this.ramdom;
       }
     }
 
