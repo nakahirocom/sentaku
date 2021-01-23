@@ -35,16 +35,15 @@
       }
     }
 
-    const ChoiseForm = ({choise}) => {
-      console.dir(choise)
-      return <li key={choise}><button>{choise}</button></li>
+    const ChoiseForm = ({choise, onClick}) => {
+      return <li key={choise}><button onClick={() => onClick()}>{choise}</button></li>
     }
 
-    const QuizForm = (quiz) => {
+    const QuizForm = ({quiz, onClick}) => {
       const { useState } = React
-      const [choise, setChoice] = useState(null)
+      const [ choise, setChoice ] = useState(null)
       const randomChoises = quiz.random().map((choise) => {
-        return <ChoiseForm key={choise} choise={choise}/>
+        return <ChoiseForm key={choise} choise={choise} onClick={() => onClick()} />
       });
 
       return (
@@ -64,8 +63,8 @@
     class AppData {
       constructor(quizzes) {
         this.quizzes = quizzes;
-      }
-      random = function() {
+        this.random = [];
+
         let array = this.quizzes;
         for(let i = (array.length - 1); 0 < i; i--) {
           const r = Math.floor(Math.random() * (i + 1));
@@ -73,17 +72,36 @@
           array[i] = array[r];
           array[r] = tmp;
         }
-        return array;
+        this.random = array;
+      }
+      getRandom = function() {
+        return this.ramdom;
       }
     }
 
-    const AppForm = (appData) => {
-      const { useState } = React;
-      const [currentIndex, setCurrentIndex] = useState(0);
-      const quizzes = appData.random();
-      const quizForms = quizzes.map((quiz) => <QuizForm {...quiz} />)
+    const AppForm = (data) => {
+      const { useState, useEffect } = React;
+      const [ currentIndex, setCurrentIndex ] = useState(0);
+      const [ curentQuiz, setCurrentQuiz ] = useState(null);
+      const quizForms = data.random.map((quiz) => <QuizForm quiz={quiz} onClick={() => answered()} />)
 
-      return quizForms[currentIndex];
+      useEffect(() => {
+        if (curentQuiz == null) {
+          setCurrentQuiz(quizForms[currentIndex]);
+          return;
+        }
+        if (currentIndex > 0 && currentIndex < quizForms.length) {
+          setCurrentQuiz(quizForms[currentIndex]);
+        }
+      }, [currentIndex]);
+
+      const answered = () => {
+        if (currentIndex < quizForms.length - 1) {
+          setCurrentIndex(currentIndex + 1);
+        }
+      }
+
+      return curentQuiz;
     }
 
     const data = new AppData([
@@ -98,6 +116,7 @@
         ["100", "200"]
       )
     ]);
+
 
     ReactDOM.render(
       <div>
