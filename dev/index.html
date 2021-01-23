@@ -16,17 +16,12 @@
   <script type="text/babel">
     'use strict';
 
-     class Choise {
-      constructor(text, isCorrect) {
-        this.text = text;
-        this.isCorrect = isCorrect;
-      }
-    }
-
     class Quiz {
-      constructor(question, choises) {
+      constructor(question, answer, others) {
         this.question = question;
-        this.choises = choises;
+        this.answer = answer;
+        this.others = others;
+        this.choises = others.concat(answer)
       }
       random = function() {
         let array = this.choises;
@@ -40,44 +35,76 @@
       }
     }
 
-    const ChoiseForm = (choise) => {
-      return <li key={choise.text}><button>{choise.text}</button></li>
+    const ChoiseForm = ({choise}) => {
+      console.dir(choise)
+      return <li key={choise}><button>{choise}</button></li>
     }
 
     const QuizForm = (quiz) => {
       const { useState } = React
       const [choise, setChoice] = useState(null)
+      const randomChoises = quiz.random().map((choise) => {
+        return <ChoiseForm key={choise} choise={choise}/>
+      });
 
-      const randomChoises = quiz.random().map((choise) => <ChoiseForm key={choise.text} {...choise}/>);
-
-    //  console.dir(randomChoises);
-    
       return (
         <>
           <h2>問題</h2>
           <div>{quiz.question}</div>
           <h2>選択</h2>
-          <ul style={{ listStyleType: 'none' }}>{randomChoises}</ul>
+          <ul style={{ listStyleType: 'none' }}>
+            {randomChoises}
+          </ul>
           <h2>解答</h2>
           <div id="text_a"></div>
         </>
       )
     }
 
+    class AppData {
+      constructor(quizzes) {
+        this.quizzes = quizzes;
+      }
+      random = function() {
+        let array = this.quizzes;
+        for(let i = (array.length - 1); 0 < i; i--) {
+          const r = Math.floor(Math.random() * (i + 1));
+          let tmp = array[i];
+          array[i] = array[r];
+          array[r] = tmp;
+        }
+        return array;
+      }
+    }
+
+    const AppForm = (appData) => {
+      const { useState } = React;
+      const [currentIndex, setCurrentIndex] = useState(0);
+      const quizzes = appData.random();
+      const quizForms = quizzes.map((quiz) => <QuizForm {...quiz} />)
+
+      return quizForms[currentIndex];
+    }
+
+    const data = new AppData([
+      new Quiz(
+        "1 + 1 は？",
+        "2", 
+        ["3", "200"]
+      ),
+      new Quiz(
+        "100 * 100 は？",
+        "10000", 
+        ["100", "200"]
+      )
+    ]);
 
     ReactDOM.render(
       <div>
-        <h1>クイズひな形</h1>
+        <h1>三択クイズ - React.js</h1>
           <hr />
           <span id="001"></span>
-          <QuizForm 
-            {...new Quiz(
-              "1 + 1 は？", [
-                new Choise("3", false),
-                new Choise("2", true),
-                new Choise("200", false)
-              ])}
-          />
+          <AppForm {...data} />
       </div>,
       document.getElementById('app')
     );
