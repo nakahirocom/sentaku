@@ -1,5 +1,33 @@
 qa = new Array();
-//qa[00] = ["", "", "_"];
+//
+//qa[00] = ["","", "_"];
+
+//
+//qa[00] = ["","", "_"];
+
+//
+//qa[00] = ["","", "_"];
+
+//12.JavaScriptのオブジェクト
+qa[111] = ["JavaScriptのオブジェクトlet age ={namber:5};のnamberの値を10に変更するコードはどれでしょう",
+           "age.namber=10;",
+           "111_ｵﾌﾞｼﾞｪｸﾄ名(例_age)＋ﾄﾞｯﾄ(.)＋ﾌﾟﾛﾊﾟﾃｨ名(例_namber)にｲｺｰﾙ(=)で代入できる"];
+
+//12.JavaScriptのオブジェクト
+qa[110] = ["JavaScriptのオブジェクトlet age ={namber:5};をコンソールログに表示させるコードはどれでしょう",
+           "console.log(age.namber);",
+           "110_左ｶｯｺ(＋ｵﾌﾞｼﾞｪｸﾄ名(例_age)＋ﾄﾞｯﾄ(.)＋ﾌﾟﾛﾊﾟﾃｨ名(例_namber)＋右ｶｯｺ)でくくる"];
+
+//12.JavaScriptのオブジェクト
+qa[109] = ["JavaScriptのオブジェクトで値を省略するための前提はなんでしょう",
+           "プロパティ名と同じ変数が存在する",
+           "109_ﾌﾟﾛﾊﾟﾃｨ名(例_age)と同じ名前の変数が先に定義されているためｵﾌﾞｼﾞｪｸﾄのﾌﾟﾛﾊﾟﾃｨageの値は30となる。<br>let age = 30;<br> let student = {name:'hiro',age};"];
+
+
+//12.JavaScriptのオブジェクト
+qa[108] = ["名前と値をセットでもてる値をなんというでしょう",
+           "オブジェクト=object",
+           "108_\u4f8b_let student = {name:'hiro',age:20};\u3000\u6ce2\uff76\uff6f\uff7a({)\u3067\u59cb\u307e\u308a\u3001\uff8c\uff9f\uff9b\uff8a\uff9f\uff83\uff68\u540d(\u4f8b_name)\u306e\u6b21\u306b\uff7a\uff9b\uff9d(:)\u3001\u5024(\u4f8b_'hiro')\u3002\uff76\uff9d\uff8f(,)\u3067\u533a\u5207\u3063\u3066\u5897\u3084\u3059\u3002\u6700\u5f8c\u306b\u6ce2\uff76\uff6f\uff7a(})\u3067\u304f\u304f\u308b"];
 
 //11.JavaScriptの関数
 qa[107] = ["function test(r) {return r*r};のコードの保守性を上げるには何をすればよいでしょう",
