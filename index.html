@@ -19,8 +19,8 @@
 
         <h2>ランダム出題</h2>
         <button style="display:block;font-size: 30px" type="submit" id="text_r1"></button>
-        <button style="display:block;font-size: 20px" type="submit" id="text_r2"></button>
-        <button style="display:block;font-size: 40px" type="submit" id="text_r3"></button>
+        <button style="display:block;font-size: 30px" type="submit" id="text_r2"></button>
+        <button style="display:block;font-size: 30px" type="submit" id="text_r3"></button>
 
         <h2>答え合わせ</h2>
         <div id="text_q1"></div>
@@ -88,8 +88,8 @@ for (let sen = 0; sen < sentaku.length; sen++) {
 }else{
   anser= "-";
 }
-
-    document.getElementById("text_q"+(sen+1)).innerHTML = "選択"+(sen+1)+" : "+sentaku[sen][0];
+　
+    document.getElementById("text_q"+(sen+1)).innerHTML = "選択"+(sen+1)+"   "+sentaku[sen][0];
     document.getElementById("text_a"+(sen+1)).innerHTML = "解答"+anser+" : "+sentaku[sen][1];
     document.getElementById("text_k"+(sen+1)).innerHTML = "解説"+anser+" : "+sentaku[sen][2];
 }
