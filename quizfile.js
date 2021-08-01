@@ -30,7 +30,7 @@ qa[110] = ["Webｻｲﾄでcssのﾌﾟﾛﾊﾟﾃｨをみる方法はどれ�
            "110_13/94.1-13.はじめてのCSS_ﾃﾞﾍﾞﾛｯﾊﾟｰﾂｰﾙが開き、要素にどのような CSS が適用されているのかを表示させることができます。"];
 
 qa[109] = ["htmlで別ﾌｧｲﾙのtest.cssを読み込ませる記述はどれでしょう",
-          "&lt; link rel = &quot;stylesheet&quot;href = &quot;test.css&quot; / &gt;<link rel="stylesheet" href="test.css" />",
+          "&lt; link rel = &quot;stylesheet&quot;href = &quot;test.css&quot; / &gt;",
           "109_13/94.1-13.はじめてのCSS_link:css と入力して Tab を押すことで、 link 要素のﾃﾝﾌﾟﾚｰﾄが利用可能。PCで作成するなら外部ﾘﾝｸを使うのが効率よいのでstyle要素は使わない"];
 
 qa[108] = ["htmlの中で、見た目を設定するcssの要素はどれでしょう",
