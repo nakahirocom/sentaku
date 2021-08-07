@@ -10,11 +10,15 @@ qa = new Array();
 
 
 
+qa[123] = ["GitHubでﾘﾎﾟｼﾞﾄﾘに変更を加えることを何という",
+           "Commit(ｺﾐｯﾄ)",
+           "123_14/94.2-12.GitHubでWebｻｲﾄ公開_"];
+
 qa[122] = ["URLの表示のみでなく、SNSやﾁｬｯﾄｱﾌﾟﾘ上に画像入れて目立たせる技術を何という",
            "OGP=Open Graph Protocol(ｵｰﾌﾟﾝｸﾞﾗﾌﾎﾟﾛﾄｺﾙ)",
            "122_14/94.2-12.GitHubでWebｻｲﾄ公開_"];
 
-qa[121] = ["GitHubでﾘﾎﾟｼﾞﾄﾘをに新しくﾌｧｲﾙを追加する方法は",
+qa[121] = ["GitHubでﾘﾎﾟｼﾞﾄﾘに新しくﾌｧｲﾙを追加する方法は",
            "Add File → Create new file",
            "121_14/94.2-12.GitHubでWebｻｲﾄ公開_Name your file に「ﾌｧｲﾙ名.拡張子」。[Edit new file]にｺｰﾄﾞを記述する"];
 
