@@ -11,9 +11,9 @@ qa = new Array();
 
 
 
-qa[130] = ["GitHubのﾘﾎﾟｼﾞﾄﾘをｺﾋﾟｰし、Linux内にGitHubのようなﾘﾎﾟｼﾞﾄﾘを作る操作は",
+qa[130] = ["GitHubのﾘﾎﾟｼﾞﾄﾘをｺﾋﾟｰし、Linux内にGitHubのようなﾘﾎﾟｼﾞﾄﾘを作ることを",
            "clone(ｸﾛｰﾝ)",
-           "130_14/94.2-14.GitとGitHubの連携_GitHubではFork。ただ、Forkの中で内部的にはcloneが行われている"];
+           "130_14/94.2-14.GitとGitHubの連携_(ｺﾏﾝﾄﾞ例 GIt clone url)(urlは、codeのSSHのｱﾄﾞﾚｽをｺﾋﾟｰする)GitHubではFork。ただ、Forkの中で内部的にはcloneが行われている"];
 
 qa[129] = ["GitHubにGitの連携のために登録するのは",
            "公開鍵",
