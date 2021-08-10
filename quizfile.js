@@ -8,6 +8,29 @@ qa = new Array();
 // qa[110] = ["",  "", ""];
 // qa[110] = ["", "", ""];
 
+qa[160] = ["nodeでconst fs=require(\'fs\') const readline=require(\'readline\') → const rs=fs.createReadStream(\'./test\');後にconst rl = readline.createInterface({input\: rs, output\:{} })。その後にﾛｸﾞを表示するｺｰﾄﾞは",
+           "rl.on(\'line\', lineString => {console.log(lineString); ",
+           "160_14/94.3-04.集計処理を行うﾌﾟﾛｸﾞﾗﾑ_linestringは引数。node.jsに登録されたﾓｼﾞｭｰﾙで覚えるｺｰﾄﾞではない"];
+
+qa[159] = ["nodeでconst fs=require(\'fs\') const readline=require(\'readline\') → const rs=fs.createReadStream(\'./test\');後にreadlineﾓｼﾞｭｰﾙにtestﾌｧｲﾙを設定するｺｰﾄﾞは",
+           "const rl = readline.createInterface({input\: rs, output\:{} }); ",
+           "159_14/94.3-04.集計処理を行うﾌﾟﾛｸﾞﾗﾑ_{inputとoutput}の枠は必須につき、outputをしない時は{}空の記述をする"];
+
+qa[158] = ["nodeでconst fs=require(\'fs\')後にtestﾌｧｲﾙを読込む状態にｾｯﾄするｺｰﾄﾞは",
+           "const rs = fs.createReadStream(\'./test\'); ",
+           "158_14/94.3-04.集計処理を行うﾌﾟﾛｸﾞﾗﾑ_creatReadStreamがｾｯﾄするｺﾏﾝﾄﾞ"];
+
+qa[157] = ["nodeでﾌｧｲﾙｦ1行ずつ読込むためのﾓｼﾞｭｰﾙは",
+           "readline",
+           "157_14/94.3-04.集計処理を行うﾌﾟﾛｸﾞﾗﾑ_rd = require(\'readline\'))。()内のreadline(ﾘｰﾄﾞﾗｲﾝ)ﾓｼﾞｭｰﾙをrequireでﾒﾓﾘに読込み無駄なく使えるようにする"];
+
+qa[156] = ["nodeでﾌｧｲﾙを扱うためのﾓｼﾞｭｰﾙは",
+           "fs",
+           "156_14/94.3-04.集計処理を行うﾌﾟﾛｸﾞﾗﾑ_(例fs = require(\'fs\'))。()内のfs(ﾌｧｲﾙｼｽﾃﾑ)=FileSystemﾓｼﾞｭｰﾙをrequireでﾒﾓﾘに読込み無駄なく使えるようにする"];
+
+qa[155] = ["gitでﾘﾓｰﾄのﾌﾞﾗﾝﾁaをﾛｰｶﾙで同名のﾌﾞﾗﾝﾁにして同時にﾁｪｯｸｱｳﾄするｺﾏﾝﾄﾞは",
+           "git checkout a",
+           "155_14/94.3-04.集計処理を行うﾌﾟﾛｸﾞﾗﾑ_本来はgit branch a →git checkout a だが、省略可能"];
 
 qa[154] = ["ES6で利用できるMapの値を取得するｺｰﾄﾞは",
            "etoMap.set(key,value);",
