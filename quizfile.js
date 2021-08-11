@@ -8,6 +8,18 @@ qa = new Array();
 // qa[110] = ["",  "", ""];
 // qa[110] = ["", "", ""];
 
+qa[162] = ["配列で初期化が必要な理由は",
+           "undefinedでは代入時にｴﾗｰになるため",
+           "162_14/94.3-04.集計処理を行うﾌﾟﾛｸﾞﾗﾑ_nullにすると配列でも利用可能"];
+
+qa[161] = ["nodeでrlｵﾌﾞｼﾞｪｸﾄでlineｲﾍﾞﾝﾄを全て読込んだ後に走らせるｺｰﾄﾞは",
+           "rl.on(\'close\', ( ) => { });",
+           "161_14/94.3-04.集計処理を行うﾌﾟﾛｸﾞﾗﾑ_"];
+
+qa[161] = ["nodeでrlｵﾌﾞｼﾞｪｸﾄでlineｲﾍﾞﾝﾄを発生させるｺｰﾄﾞは",
+           "rl.on(\'line\', lineString => {console.log(lineString);});",
+           "161_14/94.3-04.集計処理を行うﾌﾟﾛｸﾞﾗﾑ_lineｲﾍﾞﾝﾄは1行ずつ処理。配列が10あれば1行目~10行目までﾙｰﾌﾟのように繰り返す"];
+
 qa[160] = ["nodeでconst fs=require(\'fs\') const readline=require(\'readline\') → const rs=fs.createReadStream(\'./test\');後にconst rl = readline.createInterface({input\: rs, output\:{} })。その後にﾛｸﾞを表示するｺｰﾄﾞは",
            "rl.on(\'line\', lineString => {console.log(lineString); ",
            "160_14/94.3-04.集計処理を行うﾌﾟﾛｸﾞﾗﾑ_linestringは引数。node.jsに登録されたﾓｼﾞｭｰﾙで覚えるｺｰﾄﾞではない"];
