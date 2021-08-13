@@ -10,15 +10,15 @@ qa = new Array();
 
 
 
-qa[9] = ["HTMLでYouTube動画の埋め込みに使われるﾀｸﾞは",
-          "iframeﾀｸﾞ（ｱｲﾌﾚｰﾑ）",
-          "9_05/94.01-05.HTMLで作る自己紹介ﾍﾟｰｼﾞ_"];
+qa[12] = ["JavaScriptで●●●参照ｴﾗｰのﾒｯｾｰｼﾞは",
+          "Uncaught ReferenceError: ●●● is not defined   test.js:1",
+          "12_06/94.01-06.はじめてのJavaScript_uncaught(ｱﾝｺｳﾄ=捉えられない)。referenceError(ﾘﾌｧﾚﾝｽｴﾗｰ=参照ｴﾗｰ)。define(ﾃﾞｨﾌｧｲﾝ=定義する)"];
 
-qa[8] = ["JavaScriptで文字列表示の記号は",
-          "ｼﾝｸﾞﾙｺｰﾃｰｼｮﾝ(&#039;)",
-          "8_04/94.01-04.さまざまなHTMLﾀｸﾞ_ﾀﾞﾌﾞﾙｺｰﾃｰｼｮﾝ(&quot;)も同様に使えます。ただ、HTML内で利用されることが多いので、干渉を避けるためJavaScript 内ではｼﾝｸﾞﾙｺｰﾃｰｼｮﾝ(&#039;)を利用すること"];
+qa[11] = ["JavaScriptでｴﾗｰが表示される場所は",
+          "Chromeのﾃﾞﾍﾞﾛｯﾊﾟｰﾂｰﾙのconsoleﾀﾌﾞ",
+          "11_06/94.01-06.はじめてのJavaScript_"];
 
-qa[7] = ["VScodeでulﾀｸﾞにliﾀｸﾞを6個入れるTabｷｰ入力は",
-          "ul>li*6",
-          "7_04/94.01-04.さまざまなHTMLﾀｸﾞ_ul>(li>ul>li*2)*2 など。まとめてﾘｽﾄを作成することができます。"];
+qa[10] = ["HTMLでJavaScriptを使うﾀｸﾞは",
+          "&lt;script src=&quot; &quot;&gt; &lt;/script&gt;",
+          "10_06/94.01-06.はじめてのJavaScript_src属性=source(ｿｰｽ=出典・由来)"];
 
