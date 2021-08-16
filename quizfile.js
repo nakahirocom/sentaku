@@ -8,6 +8,34 @@ qa = new Array();
 // qa[110] = ["",  "", ""];
 // qa[110] = ["", "", ""];
 
+qa[191] = ["配列から一致する要素を削除する組込み関数は",
+           "splice",
+           "191_14/94.3-08.ﾓｼﾞｭｰﾙ化された処理_splice(ｽﾌﾟﾗｲｽ)。第1引数に削除する位置の始まりｲﾝﾃﾞｯｸｽ。第2引数は削除する要素の個数。1つ削除するならtasks.splice(indexFound, 1);"];
+
+qa[190] = ["配列からtaskを探索する組込み関数は",
+           "findIndex",
+           "190_14/94.3-08.ﾓｼﾞｭｰﾙ化された処理_一致すればｲﾝﾃﾞｯｸｽ。不一致なら-1を返す。function done(task) {const indexFound = tasks.findIndex(t => t.name === task); if (indexFound !== -1) tasks[indexFound].state = true;} }"];
+
+qa[189] = ["Node.jsの標準ﾓｼﾞｭｰﾙで、実行される結果と期待する内容を引数として渡し、両社が一致するかﾃｽﾄするｺｰﾄﾞは",
+           "deepStrictEqual",
+           "189_14/94.3-08.ﾓｼﾞｭｰﾙ化された処理_assert=断定する。(例assert.deepStrictEqual(todo.list(), ['ﾉｰﾁを買う', '鉛筆を買う']);)。todo.list()とあるべき配列['ﾉｰﾁを買う', '鉛筆を買う']と一致しなければｴﾗｰが出る"];
+
+qa[188] = ["ﾘﾌｧｸﾀﾘﾝｸﾞでtasks.filter(task => task.state)を下記関数作った後のｺｰﾄﾞは？　function isDone(taskAndIsDonePair){return taskAndIsDonePair.state;}",
+           "tasks.filter(task => isDone(task));",
+           "188_14/94.3-08.ﾓｼﾞｭｰﾙ化された処理_ｱﾛｰ関数。ﾘﾌｧｸﾀﾘﾝｸﾞはlist関数をｼﾝﾌﾟﾙにし外部に関数を作る。結果、わかりやすくなる。(isDoneは自由に作成した名前)tasks.filter(isDone);という省略も可能"];
+
+qa[187] = ["配列tasks=[{name:あ, state:true},{name:い, state:false}]からstateがtrueのname:「あ」を取出すｺｰﾄﾞは",
+           "tasks.filter(task => task.state).map(t => t.name);",
+           "187_14/94.3-08.ﾓｼﾞｭｰﾙ化された処理_ｱﾛｰ関数使った場合。1.配列名.filter(task => task.state)でstate:trueの[{name:あ, state:true}]を取得。2.1で取得した配列を.map(t => t.name)でname:あを抜き出している"];
+
+qa[186] = ["一連の処理とﾃﾞｰﾀのまとまり(=ｵﾌﾞｼﾞｪｸﾄ)の生成、状態変更、削除の状態遷移を表す図は",
+           "ｽﾃｰﾄﾁｬｰﾄ図",
+           "186_14/94.3-08.ﾓｼﾞｭｰﾙ化された処理_ｵﾌﾞｼﾞｪｸﾄのﾗｲﾌｻｲｸﾙをつかめる"];
+
+qa[185] = ["ｿﾌﾄｳｪｱが情報の永続化をしようとした時に必要な一連の操作概念は",
+           "CRUD",
+           "185_14/94.3-08.ﾓｼﾞｭｰﾙ化された処理_CRUD(ｸﾗｯﾄﾞ)=CReate(生成)→Read(読取)→Update(更新)→Delete(削除)の頭文字"];
+
 qa[184] = ["javascriptで引数xを2倍にする無名関数を含む変数multi2のｱﾛｰ関数は",
            "let multi2 = x =&gt; console.log(x*x);",
            "184_14/94.3-08.ﾓｼﾞｭｰﾙ化された処理_ES6から。(例multi2(5);で呼ぶと10。無名関数から更にfunctionをなくし引数の後に=&gt;を追加。変数=　引数1 =&gt; 処理;。引数が1つのみなら引数の( )(今回はx)は省略可。処理の{}も省略可。returnも1つの式に収まるなら省略可"];
