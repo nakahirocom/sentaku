@@ -14,19 +14,19 @@ qa[191] = ["配列から一致する要素を削除する組込み関数は",
 
 qa[190] = ["配列からtaskを探索する組込み関数は",
            "findIndex",
-           "190_14/94.3-08.ﾓｼﾞｭｰﾙ化された処理_一致すればｲﾝﾃﾞｯｸｽ。不一致なら-1を返す。function done(task) {const indexFound = tasks.findIndex(t => t.name === task); if (indexFound !== -1) tasks[indexFound].state = true;} }"];
+           "190_14/94.3-08.ﾓｼﾞｭｰﾙ化された処理_一致すればｲﾝﾃﾞｯｸｽ。不一致なら-1を返す。function done(task) {const indexFound = tasks.findIndex(t =&gt; t.name === task); if (indexFound !== -1) tasks[indexFound].state = true;} }"];
 
 qa[189] = ["Node.jsの標準ﾓｼﾞｭｰﾙで、実行される結果と期待する内容を引数として渡し、両社が一致するかﾃｽﾄするｺｰﾄﾞは",
            "deepStrictEqual",
-           "189_14/94.3-08.ﾓｼﾞｭｰﾙ化された処理_assert=断定する。(例assert.deepStrictEqual(todo.list(), ['ﾉｰﾁを買う', '鉛筆を買う']);)。todo.list()とあるべき配列['ﾉｰﾁを買う', '鉛筆を買う']と一致しなければｴﾗｰが出る"];
+           "189_14/94.3-08.ﾓｼﾞｭｰﾙ化された処理_assert=断定する。(例assert.deepStrictEqual(todo.list(), [&#x27;ﾉｰﾁを買う&#x27;, &#x27;鉛筆を買う&#x27;]);)。todo.list()とあるべき配列[&#x27;ﾉｰﾁを買う&#x27;, &#x27;鉛筆を買う&#x27;]と一致しなければｴﾗｰが出る"];
 
-qa[188] = ["ﾘﾌｧｸﾀﾘﾝｸﾞでtasks.filter(task => task.state)を下記関数作った後のｺｰﾄﾞは？　function isDone(taskAndIsDonePair){return taskAndIsDonePair.state;}",
-           "tasks.filter(task => isDone(task));",
+qa[188] = ["ﾘﾌｧｸﾀﾘﾝｸﾞでtasks.filter(task =&gt; task.state)を下記関数作った後のｺｰﾄﾞは？　function isDone(taskAndIsDonePair){return taskAndIsDonePair.state;}",
+           "tasks.filter(task =&gt; isDone(task));",
            "188_14/94.3-08.ﾓｼﾞｭｰﾙ化された処理_ｱﾛｰ関数。ﾘﾌｧｸﾀﾘﾝｸﾞはlist関数をｼﾝﾌﾟﾙにし外部に関数を作る。結果、わかりやすくなる。(isDoneは自由に作成した名前)tasks.filter(isDone);という省略も可能"];
 
 qa[187] = ["配列tasks=[{name:あ, state:true},{name:い, state:false}]からstateがtrueのname:「あ」を取出すｺｰﾄﾞは",
-           "tasks.filter(task => task.state).map(t => t.name);",
-           "187_14/94.3-08.ﾓｼﾞｭｰﾙ化された処理_ｱﾛｰ関数使った場合。1.配列名.filter(task => task.state)でstate:trueの[{name:あ, state:true}]を取得。2.1で取得した配列を.map(t => t.name)でname:あを抜き出している"];
+           "tasks.filter(task =&gt; task.state).map(t =&gt; t.name);",
+           "187_14/94.3-08.ﾓｼﾞｭｰﾙ化された処理_ｱﾛｰ関数使った場合。1.配列名.filter(task =&gt; task.state)でstate:trueの[{name:あ, state:true}]を取得。2.1で取得した配列を.map(t =&gt; t.name)でname:あを抜き出している"];
 
 qa[186] = ["一連の処理とﾃﾞｰﾀのまとまり(=ｵﾌﾞｼﾞｪｸﾄ)の生成、状態変更、削除の状態遷移を表す図は",
            "ｽﾃｰﾄﾁｬｰﾄ図",
