@@ -66,6 +66,16 @@ let renzokuseikai = 0;
 qa = new Array();
 //
 //qa[193] = ["問題","答え","193_.3-011.例外処理_",問題番号,正解数,間違数];
+
+qa[205] = ["ｲﾍﾞﾝﾄerrorをｱｻｲﾝするｺｰﾄﾞは"
+           .on('clientError', (e) => {  console.error('[' + new Date() + '] Client Error', e);",
+           "3-013.HTTPのﾌｫｰﾑ_ 'error' という文字列のｲﾍﾞﾝﾄが発生したらｻｰﾊﾞｰｴﾗｰが発生したｴﾗｰﾛｸﾞを表示する"
+           ,205,0,0];	
+				      
+qa[204] = ["ｲﾍﾞﾝﾄerrorをｱｻｲﾝするｺｰﾄﾞは"
+           ".on('error', e => console.error( 'Server Error', e);",
+           "3-013.HTTPのﾌｫｰﾑ_ 'error' という文字列のｲﾍﾞﾝﾄが発生したらｻｰﾊﾞｰｴﾗｰが発生したｴﾗｰﾛｸﾞを表示。'clienterror'の時は、.on('clientError', (e) => {console.error('[' + new Date() + '] Client Error', e);"
+           ,204,0,0];
 	
 qa[203] = ["ｺﾝｿｰﾙに情報のﾛｸﾞを表示するｺｰﾄﾞは"
            "console.info();",
