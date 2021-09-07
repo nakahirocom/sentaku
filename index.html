@@ -69,47 +69,47 @@ qa = new Array();
 
 qa[205] = ["",
            "",
-           "3-013.ﾛｸﾞ_ 'error' という文字列のｲﾍﾞﾝﾄが発生したらｻｰﾊﾞｰｴﾗｰが発生したｴﾗｰﾛｸﾞを表示する"
+           "205_3-013.ﾛｸﾞ_ 'error' という文字列のｲﾍﾞﾝﾄが発生したらｻｰﾊﾞｰｴﾗｰが発生したｴﾗｰﾛｸﾞを表示する"
            ,205,0,0];	
 				      
 qa[204] = ["ｲﾍﾞﾝﾄerrorをｱｻｲﾝするｺｰﾄﾞは",
            ".on('error', e => console.error( 'Server Error', e);",
-           "3-013.ﾛｸﾞ_ 'error' という文字列のｲﾍﾞﾝﾄが発生したらｻｰﾊﾞｰｴﾗｰが発生したｴﾗｰﾛｸﾞを表示。'clienterror'の時は、.on(&#x27;clientError&#x27;, (e) =&gt; {console.error(&#x27;[&#x27; + new Date() + &#x27;] Client Error&#x27;, e);"
+           "204_3-013.ﾛｸﾞ_ 'error' という文字列のｲﾍﾞﾝﾄが発生したらｻｰﾊﾞｰｴﾗｰが発生したｴﾗｰﾛｸﾞを表示。'clienterror'の時は、.on(&#x27;clientError&#x27;, (e) =&gt; {console.error(&#x27;[&#x27; + new Date() + &#x27;] Client Error&#x27;, e);"
            ,204,0,0];
 	
 qa[203] = ["ｺﾝｿｰﾙに情報のﾛｸﾞを表示するｺｰﾄﾞは",
            "console.info();",
-           "3-013.ﾛｸﾞ_console.logよりﾛｸﾞﾚﾍﾞﾙを分けれる。info(情報:残したいもの) warn(警告:問題ある可能性の情報) error(ｴﾗｰ:直ちに対応が必要)"
+           "203_3-013.ﾛｸﾞ_console.logよりﾛｸﾞﾚﾍﾞﾙを分けれる。info(情報:残したいもの) warn(警告:問題ある可能性の情報) error(ｴﾗｰ:直ちに対応が必要)"
            ,203,0,0];
 
 qa[202] = ["URLｴﾝｺｰﾄﾞされた値を元に直すJSの関数は",
            "decodeURIComponent",
-           "3-015.HTTPのﾌｫｰﾑ_（URLｴﾝｺｰﾄﾞ後→yaki-shabu=%E7%84%BC%E3%81%8D%E8%82%89）const decoded = decodeURIComponent(rawData);　（URLｴﾝｺｰﾄﾞ前→ yaki-shabu=しゃぶしゃぶ）"
+           "202_3-015.HTTPのﾌｫｰﾑ_（URLｴﾝｺｰﾄﾞ後→yaki-shabu=%E7%84%BC%E3%81%8D%E8%82%89）const decoded = decodeURIComponent(rawData);　（URLｴﾝｺｰﾄﾞ前→ yaki-shabu=しゃぶしゃぶ）"
            ,202,0,0];
 	
 qa[201] = ["formﾀｸﾞで情報を送信するために利用するbuttonﾀｸﾞのtype属性は",
            "submit",
-           "3-015.HTTPのﾌｫｰﾑ_"
+           "201_3-015.HTTPのﾌｫｰﾑ_"
            ,201,0,0];
 
 qa[200] = ["動画の情報を変更時のHTTPﾘｸｴｽﾄに使われるﾒｿｯﾄﾞは",
            "PUT",
-           "3-014.HTTPﾒｿｯﾄﾞ_意味は、更新/追加。CRUD(Create、Read、Update、Delete) の内、Update/Createに対応する"
+           "200_3-014.HTTPﾒｿｯﾄﾞ_意味は、更新/追加。CRUD(Create、Read、Update、Delete) の内、Update/Createに対応する"
            ,200,0,0];
 
 qa[199] = ["動画を削除時のHTTPﾘｸｴｽﾄに使われるﾒｿｯﾄﾞは",
            "DELETE",
-           "3-014.HTTPﾒｿｯﾄﾞ_意味は、削除。CRUD(Create、Read、Update、Delete) の内、Deleteに対応する"
+           "199_3-014.HTTPﾒｿｯﾄﾞ_意味は、削除。CRUD(Create、Read、Update、Delete) の内、Deleteに対応する"
            ,199,0,0];
 
 qa[198] = ["動画を投稿時のHTTPﾘｸｴｽﾄに使われるﾒｿｯﾄﾞは",
            "POST",
-           "3-014.HTTPﾒｿｯﾄﾞ_意味は、追加。CRUD(Create、Read、Update、Delete) の内、Createに対応する"
+           "198_3-014.HTTPﾒｿｯﾄﾞ_意味は、追加。CRUD(Create、Read、Update、Delete) の内、Createに対応する"
            ,198,0,0];
 	
 qa[197] = ["動画を視聴時のHTTPﾘｸｴｽﾄに使われるﾒｿｯﾄﾞは",
            "GET",
-           "3-014.HTTPﾒｿｯﾄﾞ_意味は、取得。CRUD(Create、Read、Update、Delete) の内、Readに対応する"
+           "197_3-014.HTTPﾒｿｯﾄﾞ_意味は、取得。CRUD(Create、Read、Update、Delete) の内、Readに対応する"
            ,197,0,0];
 	
 qa[196] = ["HTTPｻｰﾊﾞｰを起動する関数は",
@@ -149,7 +149,7 @@ qa[190] = ["配列からtaskを探索する組込み関数は",
 
 qa[189] = ["Node.jsの標準ﾓｼﾞｭｰﾙで、実行される結果と期待する内容を引数として渡し、両社が一致するかﾃｽﾄするｺｰﾄﾞは",
            "deepStrictEqual",
-           "189_14/94.3-08.ﾓｼﾞｭｰﾙ化された処理_assert=断定する。(例assert.deepStrictEqual(todo.list(), [&#x27;ﾉｰﾁを買う&#x27;, &#x27;鉛筆を買う&#x27;]);)。todo.list()とあるべき配列[&#x27;ﾉｰﾁを買う&#x27;, &#x27;鉛筆を買う&#x27;]と一致しなければｴﾗｰが出る"
+           "189_14/94.3-08.ﾓｼﾞｭｰﾙ化された処理_assert=断定する。(例assert.deepStrictEqual(todo.list(), [&#x27;ﾉｰﾄを買う&#x27;, &#x27;鉛筆を買う&#x27;]);)。todo.list()とあるべき配列[&#x27;ﾉｰﾄを買う&#x27;, &#x27;鉛筆を買う&#x27;]と一致しなければｴﾗｰが出る"
            ,189,0,0];
 
 qa[188] = ["ﾘﾌｧｸﾀﾘﾝｸﾞでtasks.filter(task =&gt; task.state)を下記関数作った後のｺｰﾄﾞは？　function isDone(taskAndIsDonePair){return taskAndIsDonePair.state;}",
