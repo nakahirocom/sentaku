@@ -67,9 +67,15 @@ qa = new Array();
 //
 //qa[193] = ["問題","答え","193_.3-011.例外処理_",問題番号,正解数,間違数];
 
-qa[205] = ["",
-           "",
-           "205_3-013.ﾛｸﾞ_ 'error' という文字列のｲﾍﾞﾝﾄが発生したらｻｰﾊﾞｰｴﾗｰが発生したｴﾗｰﾛｸﾞを表示する"
+	
+qa[206] = ["rs.pipe(rs)で繋げてはいけないｺｰﾄﾞは",
+           "rs.end();",
+           "3-015.HTMLのﾌｫｰﾑ_rs.end()がpipeの中に含まれているため重複させない。Node.js では Stream形式のﾃﾞｰﾀは、読込用のStreamと書込用のStreamをつないで そのままﾃﾞｰﾀを渡すことができる。その関数が pipe という関数の機能。つまりここでは、HTTP のﾚｽﾎﾟﾝｽのｺﾝﾃﾝﾂとしてﾌｧｲﾙの内容をそのまま返せる。node.jsのﾒﾓﾘを使わない良いｺｰﾄﾞの書き方"
+           ,206,0,0];	
+
+qa[205] = ["formﾀｸﾞ内のinputﾀｸﾞの属性、name=&quot;abc&quot;、value=&quot;def&quot;がｻｰﾊﾞｰに送られる内容は",
+           "abcという項目にdefが送られる",
+           "3-015.HTMLのﾌｫｰﾑ_formでは、ｻｰﾊﾞｰのaction指定先のname項目にvalueのﾃﾞｰﾀが送られる。&lt;form method=&quot;post&quot; action=&quot;/enquetes/yaki-shabu&quot;&gt;&lt;input type=&quot;radio&quot; name=&quot;yaki-shabu&quot; value=&quot;焼き肉&quot; /&gt; 焼き肉&lt;/form&gt;"
            ,205,0,0];	
 				      
 qa[204] = ["ｲﾍﾞﾝﾄerrorをｱｻｲﾝするｺｰﾄﾞは",
